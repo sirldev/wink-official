@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../public/logo.png";
+import logo from "../../public/logo.png";
 import { useEffect, useState } from "react";
 
 function TopBar() {
@@ -12,23 +12,27 @@ function TopBar() {
   const navigations = [
     {
       title: "동아리 소개",
-      href: "/",
+      href: "/#introduce",
       mobileHide: true,
+      useLink: false,
     },
     {
       title: "활동 소개",
-      href: "/",
+      href: "/#activity",
       mobileHide: true,
+      useLink: false,
     },
     {
       title: "부원 소개",
-      href: "/",
+      href: "/member",
       mobileHide: true,
+      useLink: true,
     },
     {
       title: "지원하기",
       href: "/apply",
       mobileHide: false,
+      useLink: true,
     },
   ];
 
@@ -64,11 +68,15 @@ function TopBar() {
             {navigations.map((link) => (
               <li
                 key={link.title}
-                className={`font-bold text-sm last:text-[#3a70ff] ${
+                className={`font-pretendard  font-medium text-sm last:text-[#3a70ff] ${
                   link.mobileHide && "hidden sm:block"
                 }`}
               >
-                <Link href={link.href}>{link.title}</Link>
+                {link.useLink ? (
+                  <Link href={link.href}>{link.title}</Link>
+                ) : (
+                  <a href={link.href}>{link.title}</a>
+                )}
               </li>
             ))}
           </ul>
