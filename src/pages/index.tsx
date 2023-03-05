@@ -46,7 +46,7 @@ const contentList = [
   },
   {
     subject: "연계 활동",
-    title: "활발한 동아리 연계 활동",
+    title: "동아리 대표가 되어볼까요?\n활발한 동아리 연계 활동",
     text: "연구실 연계 활동 및 학부 연구생 활동이 활발히 진행되고 있어요. SW중심대학 관련 사업에도 다양하게 참여하고 있습니다.",
     reverse: true,
     imageSrc: active_4,
@@ -66,6 +66,11 @@ export default function Home() {
         <title>WINK: Web IN Kookmin</title>
         <meta
           name="description"
+          content="국민대학교 소프트웨어융합대학 웹 학술 동아리 윙크 😉"
+        />
+        <meta property="og:image" content="/ogImage.png"></meta>
+        <meta
+          name="og:description"
           content="국민대학교 소프트웨어융합대학 웹 학술 동아리 윙크 😉"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
